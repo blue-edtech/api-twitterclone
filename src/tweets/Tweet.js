@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const TweetSchema = new monsgoose.Schema({
+const TweetSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
