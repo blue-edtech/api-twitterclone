@@ -3,4 +3,6 @@ const Tweet = require("./Tweet");
 const createTweetService = (message, userId) =>
   Tweet.create({ message, user: userId });
 
-module.exports = { createTweetService };
+const findAllTweetsService = () => Tweet.find().sort({ _id: -1 }).populate("user");
+
+module.exports = { createTweetService, findAllTweetsService };
