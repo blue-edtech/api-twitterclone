@@ -3,7 +3,7 @@ const Tweet = require("./Tweet");
 const createTweetService = (message, userId) =>
   Tweet.create({ message, user: userId });
 
-const findAllTweetsService = (offset = 0, limit = 5) =>
+const findAllTweetsService = (offset, limit) =>
   Tweet.find().sort({ _id: -1 }).skip(offset).limit(limit).populate("user");
 
 const countTweets = () => Tweet.countDocuments();
